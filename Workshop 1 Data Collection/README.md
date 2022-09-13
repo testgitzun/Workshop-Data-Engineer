@@ -1,6 +1,6 @@
 ## Workshop Data Collection
 
-**สิ่งที่เรียนรู้จาก Workshop**
+**สิ่งที่เรียนรู้จาก Workshop Data Collection**
 
 การทำ ETL คือดึงข้อมูลแล้วทำการ Transform ส่วน Load Workshop นี้จะยังไม่โหลดเก็บใน Data Lake
 1. อ่านข้อมูลจาก MySQL Database และดึงข้อมูลลจาก REST API 
@@ -12,6 +12,4 @@
 7. แปลง Type ข้อมูลให้เป็นข้อมูลที่ถูกต้อง เช่น String เป็น Float
 8. สร้าง Function สำหรับคำนวนราคาโดยสร้างคอลัมน์ใหม่
 9. Save ข้อมูลที่สมบูรณ์ 
-10. เรียนรู้คำสั่ง ฟังก์ชันต่างๆ ใน Pandas เช่น query, filter, summary, rename, groupby กับข้อมูลหนังสือ
-
-**ทดสอบ Merge ที่ branch test-merge**
+10. เรียนรู้คำสั่งฟังก์ชันต่างๆ ใน Pandas เช่น query, filter, summary, rename, groupby กับข้อมูลหนังสือ

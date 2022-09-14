@@ -1,9 +1,13 @@
-## Workshop Cloud Computing
+## Workshop Cloud Computing 
 
 **สิ่งที่เรียนรู้จาก Workshop**
 
-1. ใช้งาน Google Cloud Platform
-2. วิธีสร้าง Bucket 
-3. การใช้งาน Cloud Storage หรือ Bucket สำหรับเก็บข้อมูลชั่วคราวที่เเก็บข้อมูลแบบไฟล์
-4. เขียน Code Python สำหรับ Upload และ Download ไฟล์ที่อยู่ใน Cloud Shell เพื่อย้ายไปเก็บใน Bucket หรือโหลด ข้อมูลออกจาก Bucket 
-5. คำสั่งการใช้งาน Bash ใน Cloud Shell 
+1. Google Cloud Service Cloud Storage
+    - สร้าง Bucket โดยสร้างบน Web UI
+    - สร้าง Bucket ใช้คำสั่ง gsutil ผ่าน Cloud Shell
+    - Upload ข้อมูลที่เป็นไฟล์ csv ผ่าน Web UI
+    - Upload ข้อมูลที่เป็นไฟล์ csv ผ่านคำสั่ง gsutil
+    - Upload ข้อมูลที่เป็นไฟล์ csv เขียน Code Python อับโหลดแบบระบุ bucket
+2. Cloud Shell ใช้ Bash command line จัดการไฟล์ csv 
+    - คำสั่งพื้นฐาน ls, ls -l, pwd, cd 
+    - คำสั่งอ่านไฟล์ สร้างไฟล์ more, less, touch, cat, echo 

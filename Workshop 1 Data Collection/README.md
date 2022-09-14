@@ -2,14 +2,15 @@
 
 **สิ่งที่เรียนรู้จาก Workshop Data Collection**
 
-การทำ ETL คือดึงข้อมูลแล้วทำการ Transform ส่วน Load Workshop นี้จะยังไม่โหลดเก็บใน Data Lake
-1. อ่านข้อมูลจาก MySQL Database และดึงข้อมูลลจาก REST API 
-2. ดึงข้อมูลจาก Tables ใน Database MySQL และข้อมูล API มาแสดงผล
-3. เรียกใช้งาน cursor และใช้คำสั่ง SQL ในการ Query วิธี Query ข้อมูลโดยใช้ read_sql() ใน Pandas
-4. ทำการแปลงข้อมูลจาก Table เป็น Pandas Dataframe เพื่อความง่ายในการอ่านข้อมูล
-5. การเชื่อมต่อข้อมูล 2 ชุดเข้าด้วยกัน
-6. ลบเครื่องหมายที่ไม่ต้องในคอลัมน์ Price
-7. แปลง Type ข้อมูลให้เป็นข้อมูลที่ถูกต้อง เช่น String เป็น Float
-8. สร้าง Function สำหรับคำนวนราคาโดยสร้างคอลัมน์ใหม่
-9. Save ข้อมูลที่สมบูรณ์ 
-10. เรียนรู้คำสั่งฟังก์ชันต่างๆ ใน Pandas เช่น query, filter, summary, rename, groupby กับข้อมูลหนังสือ
+1. ทำ ETL โดย E(Extract) ดึงข้อมูลจาก MySQL Database, REST API Python 
+   - Config เชื่อมต่อกับ MySQL Database และ API โดยใช้ Package requests
+   - List Table/Query Table ด้วยคำสั่ง cursor และใช้ SQL เพื่อ list ตารางออกมา
+   - Query ข้อมูลด้วย Pandas คำสั่ง read_sql()
+2. T(Transform) ปรับรูปแบบให้เหมาะสมใช้ Pandas เพื่อจัดการข้อมูลที่ดึงมาง่ายขึ้น
+   - แปลง Data จาก MySQL Database ที่อยู่ในรูปแบบ list ให้เป็น DataFrame และข้อมูลจาก REST API Python แบบ json เปลี่ยนเป็น DataFrame
+   - join ข้อมูล DataFrame ที่ดึงจาก MySQL Database มี 2 Table คือ audible_data, audible_transaction ด้วยคำสั่ง merge() เก็บในตัวแปร transaction
+   - ลบตัวอักษรที่ไม่ต้องการออกจากคอลัมน์ Price
+   - เปลี่ยน Data Type ให้ถูกต้อง
+   - สร้าง Function สำหรับคำนวนราคา
+   - ใช้คำสั่งฟังก์ชันต่างๆ ใน Pandas เช่น query, filter, summary, rename, groupby สำหรับดูข้อมูลหนังสือ
+3. Save ข้อมูลที่สมบูรณ์

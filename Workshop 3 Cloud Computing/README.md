@@ -11,3 +11,5 @@
 2. Cloud Shell ใช้ Bash command line จัดการไฟล์ csv 
     - คำสั่งพื้นฐาน ls, ls -l, pwd, cd 
     - คำสั่งอ่านไฟล์ สร้างไฟล์ more, less, touch, cat, echo 
+    - คำสั่งสร้าง directory ลบ directory ก็อปปี้ไฟล์ mkdir, rm, rm -r, cp
+    - คำสั่งโหลดไฟล์จากภายนอก แตกไฟล์ wget -O, unzip 

@@ -3,6 +3,7 @@
 **สิ่งที่เรียนรู้จาก Workshop Data Pipeline Orchestration**
 
 1. วิธีการจัดการ Data Pipeline ให้ข้อมูลไหลตามขั้นตอน
+   - วิธีเขียน Code Python แต่ละส่วน เช่น วิธีสร้าง DAG 5 ขั้นตอน, สร้าง Task ว่าให้ทำงานส่วนไหนบ้างและส่ง argument ไปยัง Fucntion
 2. Cloud Composer 
    - สร้าง Composer สำหรับใช้งาน Airflow บน Google Cloud
    - เข้าไปจัดการ environment บน Composer เช่น ติดตั้ง python package 

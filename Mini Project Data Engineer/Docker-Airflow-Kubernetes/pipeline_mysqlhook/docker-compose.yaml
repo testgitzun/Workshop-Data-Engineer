@@ -51,12 +51,6 @@
         AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
         AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
         AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
-        MYSQL_HOST: ${MYSQL_HOST}
-        MYSQL_PORT: ${MYSQL_PORT}
-        MYSQL_USER: ${MYSQL_USER}
-        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-        MYSQL_DB: ${MYSQL_DB}
-        MYSQL_CHARSET: ${MYSQL_CHARSET}
       volumes:
         - ./dags:/opt/airflow/dags
         - ./logs:/opt/airflow/logs

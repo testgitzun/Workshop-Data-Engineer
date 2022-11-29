@@ -9,20 +9,21 @@ from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQue
 import pandas as pd
 
 
-# dataset 
+# data source 
 url = 'gs://asia-southeast1-finalworksh-972469c5-bucket/data/superstore.csv'
 
-# path data ใน airflow
+# path data ใน airflow สำหรับเก็บช้อมูลในโฟลเดอร์ data
 final_output_path = '/home/airflow/gcs/data/final_superstore.csv'
 
 
 # function get data
+# รับค่าจาก t1 ค่า push_path เก็บค่าชุดข้อมูล final_path เก็บค่า path
 def get_data(push_path, final_path):
     print('Load Data')
 
+    # อ่านข้อมูลไฟล์ csv และตั้ง index column 
     df_superstore = pd.read_csv(url, index_col='Order ID')
 
-    
     # rename columns
     df_superstore.rename(columns={'Order ID': 'Order_ID',
                            'Order Date': 'Order_Date', 'Ship Date': 'Ship_Date',
@@ -35,7 +36,7 @@ def get_data(push_path, final_path):
     df_superstore['Order_Date'] = pd.to_datetime(df_superstore['Order_Date'])
     df_superstore['Ship_Date'] = pd.to_datetime(df_superstore['Ship_Date'])
     
-    # save csv 
+    # save to csv 
     df_superstore.to_csv(final_path, index=False)
     print(f"Output to {final_path}")
 
